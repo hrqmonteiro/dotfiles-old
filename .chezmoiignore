@@ -1,6 +1,7 @@
 {{ if eq .chezmoi.os "darwin" }}
 .fonts/**
 .themes/**
+.config/ulauncher/**
 {{ else if eq .chezmoi.os "linux" }}
 Brewfile
 {{ end }}
