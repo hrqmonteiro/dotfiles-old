@@ -1,0 +1,6 @@
+{{ if eq .chezmoi.os "darwin" }}
+dot_fonts
+dot_themes
+{{ else if eq .chezmoi.os "linux" }}
+Brewfile.tmpl
+{{ end }}
