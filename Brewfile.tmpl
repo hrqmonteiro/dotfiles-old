@@ -1,12 +1,14 @@
-{{ if eq .chezmoi.os "darwin" }}
 tap "homebrew/bundle"
 brew "asdf"
 brew "awscli"
+brew "chezmoi"
 brew "exa"
 brew "fnm"
+brew "git-delta"
 brew "htop"
 brew "neofetch"
 brew "neovim"
+brew "python-tk@3.11"
 brew "starship"
 brew "sylpheed"
 brew "tealdeer"
@@ -57,5 +59,3 @@ cask "whale"
 cask "whalebird"
 cask "whatsapp"
 cask "zed"
-{{ else }}
-{{ end }}
