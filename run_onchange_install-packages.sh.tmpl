@@ -1,0 +1,18 @@
+{{ if eq .chezmoi.os "linux" -}}
+#!/bin/sh
+packages=(
+    exa
+    gcc
+    gcc-c++
+    gettext
+    git-delta
+    gnome-extensions-app
+    gnome-tweaks
+    neovim
+    ripgrep
+    zsh
+)
+
+sudo dnf -y install "${packages[@]}"
+{{ else -}}
+{{ end -}}
