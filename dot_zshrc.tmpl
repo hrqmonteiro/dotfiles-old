@@ -3,33 +3,18 @@ HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 # End of lines configured by zsh-newuser-install
+
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/hrq/.zshrc'
 
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
-#
-export PATH="$HOME/.local/bin:$PATH"
-export EDITOR="nvim"
-
-{{ if eq .chezmoi.os "linux"}}
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-source "$HOME/.cargo/env"
-. "$HOME/.asdf/asdf.sh"
-# fnm
-export PATH="/home/hrq/.local/share/fnm:$PATH"
-eval "`fnm env`"
-{{ end }}
 
 # append completions to fpath
 fpath=(${ASDF_DIR}/completions $fpath)
 # initialise completions with ZSH's compinit
 autoload -Uz compinit && compinit
-
-#if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-#    tmux attach -t default || tmux new -s default
-#fi
 
 alias config="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 alias ls="exa --color=always --group-directories-first --icons"
@@ -40,5 +25,20 @@ alias nvm="fnm"
 alias vi="nvim"
 alias vim="nvim"
 
-eval "$(zoxide init zsh)"
+export PATH="$HOME/.local/bin:$PATH"
+export EDITOR="nvim"
+
+{{ if eq .chezmoi.os "linux"}}
+export PATH="/home/hrq/.local/share/fnm:$PATH"
+eval "`fnm env`"
+source "$HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
+source "$HOME/.cargo/env"
+source "$HOME/.asdf/asdf.sh"
+{{ end }}
+
+#if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+#    tmux attach -t default || tmux new -s default
+#fi
+
 eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
