@@ -3,9 +3,9 @@ local wezterm = require "wezterm"
 local config = {
 	color_scheme = "vscode-dark",
   {{ if eq .chezmoi.os "darwin" }}
-  color_scheme_dirs = { "/Users/hrq/.config/wezterm/colorschemes" },
+  color_scheme_dirs = { "/Users/{{ .chezmoi.username }}/.config/wezterm/colorschemes" },
   {{ else if eq .chezmoi.os "linux" }}
-  color_scheme_dirs = { "/home/hrq/.config/wezterm/colorschemes" },
+  color_scheme_dirs = { "/home/{{ .chezmoi.username }}/.config/wezterm/colorschemes" },
   {{ end }}
   enable_tab_bar = false,
 	font = wezterm.font("Monaco Nerd Font"),
