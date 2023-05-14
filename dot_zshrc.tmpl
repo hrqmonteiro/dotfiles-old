@@ -12,10 +12,14 @@ compinit
 #
 export PATH="$HOME/.local/bin:$PATH"
 
+{{ if eq .chezmoi.os "linux"}}
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source "$HOME/.cargo/env"
-
 . "$HOME/.asdf/asdf.sh"
+# fnm
+export PATH="/home/hrq/.local/share/fnm:$PATH"
+eval "`fnm env`"
+{{ end }}
 
 # append completions to fpath
 fpath=(${ASDF_DIR}/completions $fpath)
@@ -35,16 +39,5 @@ alias nvm="fnm"
 alias vi="nvim"
 alias vim="nvim"
 
-# fnm
-export PATH="/home/hrq/.local/share/fnm:$PATH"
-eval "`fnm env`"
-
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
-
-# Added by Amplify CLI binary installer
-export PATH="$HOME/.amplify/bin:$PATH"
-
-# fnm
-export PATH="/home/hrq/.local/share/fnm:$PATH"
-eval "`fnm env`"
