@@ -10,7 +10,10 @@ local config = {
   enable_tab_bar = false,
 	font = wezterm.font("Monaco Nerd Font"),
 	font_size = 13,
+  {{ if eq .chezmoi.os "linux" }}
 	window_decorations = "NONE"
+  {{ else }}
+  {{ end }}
 }
 
 return config
