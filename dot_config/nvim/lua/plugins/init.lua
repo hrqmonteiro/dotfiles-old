@@ -16,14 +16,23 @@ local opts = {}
 
 local plugins = {
   -- colorschemes
+  -- {
+  --   "Mofiqul/vscode.nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     vim.cmd([[ colorscheme vscode ]])
+  --   end
+  -- },
   {
-    "Mofiqul/vscode.nvim",
+    "sainnhe/gruvbox-material",
     lazy = false,
     priority = 1000,
     config = function()
-      vim.cmd([[ colorscheme vscode ]])
+      vim.cmd([[ colorscheme gruvbox-material ]])
     end
   },
+
   -- completion
   "hrsh7th/nvim-cmp",
   "hrsh7th/cmp-nvim-lsp",
@@ -47,12 +56,19 @@ local plugins = {
   -- treesitter
   "nvim-treesitter/nvim-treesitter",
   "windwp/nvim-ts-autotag",
+  -- ui
+  {
+    "nvim-lualine/lualine.nvim",
+    lazy = false,
+    dependencies = { { "nvim-tree/nvim-web-devicons" }}
+  },
 }
 
 require("lazy").setup(plugins, opts)
 require("plugins.autopairs")
 require("plugins.cmp")
 require("plugins.lsp-config")
+require("plugins.lualine")
 require("plugins.null-ls")
 require("plugins.telescope")
 require("plugins.treesitter")

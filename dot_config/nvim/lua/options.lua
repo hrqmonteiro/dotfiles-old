@@ -19,7 +19,7 @@ local function apply_options(opts)
 end
 
 local globals = {
-  gruvbox_material_background = "hard"
+  gruvbox_material_background = "medium",
 }
 
 apply_globals(globals)
@@ -33,12 +33,11 @@ local options = {
 	expandtab = true,
 	incsearch = true,
 	hidden = true,
-	laststatus = 3,
 	mouse = "nv",
 	number = true,
 	relativenumber = true,
 	shiftwidth = 2,
-	showmode = true,
+	showmode = false,
   signcolumn = "yes",
 	splitbelow = true,
 	splitright = true,
