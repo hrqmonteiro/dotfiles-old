@@ -1,14 +1,14 @@
 local wezterm = require "wezterm"
 
 local config = {
-	color_scheme = "Gruvbox Material (Gogh)",
+	color_scheme = "vscode-dark",
   {{ if eq .chezmoi.os "darwin" }}
   color_scheme_dirs = { "/Users/{{ .chezmoi.username }}/.config/wezterm/colorschemes" },
   {{ else if eq .chezmoi.os "linux" }}
   color_scheme_dirs = { "/home/{{ .chezmoi.username }}/.config/wezterm/colorschemes" },
   {{ end }}
   enable_tab_bar = false,
-	font = wezterm.font("Monaco Nerd Font"),
+	font = wezterm.font("VictorMono Nerd Font", { weight = "DemiBold" }),
 	font_size = 13,
   {{ if eq .chezmoi.os "linux" }}
 	window_decorations = "NONE"

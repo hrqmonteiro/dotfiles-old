@@ -16,23 +16,14 @@ local opts = {}
 
 local plugins = {
   -- colorschemes
-  -- {
-  --   "Mofiqul/vscode.nvim",
-  --   lazy = false,
-  --   priority = 1000,
-  --   config = function()
-  --     vim.cmd([[ colorscheme vscode ]])
-  --   end
-  -- },
   {
-    "sainnhe/gruvbox-material",
+    "Mofiqul/vscode.nvim",
     lazy = false,
     priority = 1000,
     config = function()
-      vim.cmd([[ colorscheme gruvbox-material ]])
+      vim.cmd([[ colorscheme vscode ]])
     end
   },
-
   -- completion
   "hrsh7th/nvim-cmp",
   "hrsh7th/cmp-nvim-lsp",

@@ -14,7 +14,7 @@ stage {
 }
 
 .dash-background {
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(138, 148, 162, 0.2);
 }
 
@@ -59,16 +59,16 @@ stage {
 }
 
 .desktop-name-label {
-  font-weight: 500;
+  font-weight: 700;
 }
 
 #panelActivities {
-  font-weight: 500;
-  margin: 0 0 0 8px;
+  font-weight: 700;
+  margin: 0;
 }
 
 #appMenu {
-  font-weight: 500;
+  font-weight: 700;
   margin: 0;
   padding: 0;
 }
