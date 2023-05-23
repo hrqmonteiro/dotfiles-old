@@ -1,0 +1,32 @@
+add_newline = false
+
+[line_break]
+disabled = true
+
+[aws]
+disabled = true
+
+[battery]
+full_symbol = ""
+charging_symbol = ""
+discharging_symbol = ""
+
+[[battery.display]]
+threshold = 30
+style = "bold red"
+
+[character]
+error_symbol = "[](bold red)"
+success_symbol = "[→](bold green)"
+vimcmd_symbol = "[←](bold green)"
+vimcmd_replace_one_symbol = "[←](bold green)"
+vimcmd_replace_symbol = "[←](bold green)"
+vimcmd_visual_symbol = "[←](bold green)"
+
+[directory]
+{{ if eq .chezmoi.os "darwin" }}
+format = "[ $path ]($style)[$read_only]($read_only_style)"
+{{ else }}
+format = "[󰣛 $path ]($style)[$read_only]($read_only_style)"
+{{ end }}
+style = "bold blue"
