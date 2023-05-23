@@ -41,5 +41,11 @@ source "$HOME/.asdf/asdf.sh"
 #    tmux attach -t default || tmux new -s default
 #fi
 
+{{ if eq .chezmoi.os "darwin" }}
+eval "$(fnm env --use-on-cd)"
+{{ end }}
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
+
+# Added by Amplify CLI binary installer
+export PATH="$HOME/.amplify/bin:$PATH"

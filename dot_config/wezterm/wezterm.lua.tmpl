@@ -9,11 +9,12 @@ local config = {
   {{ end }}
   enable_tab_bar = false,
 	font = wezterm.font("VictorMono Nerd Font", { weight = "DemiBold" }),
-	font_size = 13,
   {{ if eq .chezmoi.os "linux" }}
-	window_decorations = "NONE"
+	font_size = 13,
   {{ else }}
+  font_size = 18,
   {{ end }}
+	window_decorations = "NONE"
 }
 
 return config
