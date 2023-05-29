@@ -2,6 +2,11 @@ stage {
   font-size: 10pt;
 }
 
+#panel {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: none;
+}
+
 .clock {
   font-weight: 400;
   margin: 0 8px 0 0;
@@ -20,7 +25,7 @@ stage {
 
 .panel-button {
   font-weight: 400;
-  color: #363636;
+  color: #161921;
   margin: 0;
   padding: 0;
 }
@@ -59,16 +64,16 @@ stage {
 }
 
 .desktop-name-label {
-  font-weight: 700;
+  font-weight: 600;
 }
 
 #panelActivities {
-  font-weight: 700;
-  margin: 0;
+  font-weight: 600;
+  margin: 0 10px;
 }
 
 #appMenu {
-  font-weight: 700;
+  font-weight: 600;
   margin: 0;
   padding: 0;
 }

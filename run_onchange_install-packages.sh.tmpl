@@ -1,6 +1,7 @@
 {{ if eq .chezmoi.os "linux" -}}
 #!/bin/sh
 packages=(
+    chsh
     exa
     gcc
     gcc-c++
@@ -8,11 +9,17 @@ packages=(
     git-delta
     gnome-extensions-app
     gnome-tweaks
+    google-roboto-fonts
     neovim
     ripgrep
+    zoxide
     zsh
 )
 
 sudo dnf -y install "${packages[@]}"
+curl -fsSL https://fnm.vercel.app/install | bash
+curl -sS https://starship.rs/install.sh | sh
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
 {{ else -}}
 {{ end -}}
