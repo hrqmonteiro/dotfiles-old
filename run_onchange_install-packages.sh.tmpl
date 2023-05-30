@@ -1,7 +1,6 @@
 {{ if eq .chezmoi.os "linux" -}}
 #!/bin/sh
 packages=(
-    chsh
     exa
     gcc
     gcc-c++
@@ -10,9 +9,12 @@ packages=(
     gnome-extensions-app
     gnome-tweaks
     google-roboto-fonts
+    libgda
+    libgda-sqlite
     neovim
     ripgrep
     tmux
+    util-linux-user
     zoxide
     zsh
 )
@@ -30,6 +32,12 @@ git clone https://gitlab.com/adeswantaTechs/shell-configurator.git
 cd shell-configurator
 ./installer.sh --build
 ./installer.sh --install USER
+cd
+rm -rf shell-configurator
+rm -rf ~/.asdf
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.11.3
+git clone https://github.com/vinceliuice/Colloid-icon-theme ~/Colloid-icon-theme && cd ~/Colloid-icon-theme && ./install.sh
+rm -rf Colloid-icon-theme
 
 {{ else -}}
 {{ end -}}
