@@ -1,20 +1,24 @@
 local wezterm = require "wezterm"
 
 local config = {
-	color_scheme = "vscode-dark",
+	color_scheme = "GruvboxDark",
   {{ if eq .chezmoi.os "darwin" }}
   color_scheme_dirs = { "/Users/{{ .chezmoi.username }}/.config/wezterm/colorschemes" },
   {{ else if eq .chezmoi.os "linux" }}
   color_scheme_dirs = { "/home/{{ .chezmoi.username }}/.config/wezterm/colorschemes" },
   {{ end }}
-  enable_tab_bar = false,
-	font = wezterm.font("VictorMono Nerd Font", { weight = "DemiBold" }),
+  enable_tab_bar = true,
+	font = wezterm.font("Monaco Nerd Font", { weight = "DemiBold" }),
   {{ if eq .chezmoi.os "linux" }}
-	font_size = 13,
+	font_size = 11,
   {{ else }}
   font_size = 18,
   {{ end }}
-	window_decorations = "NONE"
+  window_decorations = 'NONE',
+  window_frame = {
+    font = wezterm.font { family = 'Roboto', weight = 'Bold' },
+    font_size = 10
+  }
 }
 
 return config
