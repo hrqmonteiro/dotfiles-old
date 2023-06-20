@@ -15,3 +15,7 @@ require("lspconfig").ccls.setup {
 require("lspconfig").tsserver.setup {
   capabilities = capabilities
 }
+
+require'lspconfig'.prismals.setup {
+  capabilities = capabilities
+}

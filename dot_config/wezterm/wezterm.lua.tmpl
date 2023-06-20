@@ -12,9 +12,8 @@ local config = {
   {{ if eq .chezmoi.os "linux" }}
 	font_size = 11,
   {{ else }}
-  font_size = 18,
+  font_size = 16,
   {{ end }}
-  window_decorations = 'NONE',
   window_frame = {
     font = wezterm.font { family = 'Roboto', weight = 'Bold' },
     font_size = 10

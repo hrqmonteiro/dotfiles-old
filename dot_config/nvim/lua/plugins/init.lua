@@ -16,11 +16,11 @@ local opts = {}
 
 local plugins = {
   -- ActivityWatch
-  {
-    "ActivityWatch/aw-watcher-vim",
-    lazy = false,
-    priority = 1000
-  },
+  -- {
+  --   "ActivityWatch/aw-watcher-vim",
+  --   lazy = false,
+  --   priority = 1000
+  -- },
   -- colorschemes
   {
     "ellisonleao/gruvbox.nvim",
