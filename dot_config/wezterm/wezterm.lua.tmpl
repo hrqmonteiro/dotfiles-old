@@ -8,7 +8,7 @@ local config = {
   color_scheme_dirs = { "/home/{{ .chezmoi.username }}/.config/wezterm/colorschemes" },
   {{ end }}
   enable_tab_bar = true,
-	font = wezterm.font("Monaco Nerd Font", { weight = "DemiBold" }),
+	font = wezterm.font("FiraCode Nerd Font"),
   {{ if eq .chezmoi.os "linux" }}
 	font_size = 11,
   {{ else }}

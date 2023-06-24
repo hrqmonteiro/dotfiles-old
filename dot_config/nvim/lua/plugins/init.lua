@@ -17,63 +17,73 @@ local opts = {}
 local plugins = {
   -- ActivityWatch
   -- {
-  --   "ActivityWatch/aw-watcher-vim",
-  --   lazy = false,
-  --   priority = 1000
-  -- },
-  -- colorschemes
-  {
-    "ellisonleao/gruvbox.nvim",
-    lazy = false,
-    priority = 1000,
-    config = function()
-      vim.cmd([[ colorscheme gruvbox ]])
-    end
-  },
-  -- {
-  --   "Mofiqul/vscode.nvim",
-  --   lazy = false,
-  --   priority = 1000,
-  --   config = function()
-  --     vim.cmd([[ colorscheme vscode ]])
-  --   end
-  -- },
-  -- completion
-  "hrsh7th/nvim-cmp",
-  "hrsh7th/cmp-nvim-lsp",
-  "L3MON4D3/LuaSnip",
-  "saadparwaiz1/cmp_luasnip",
-  "rafamadriz/friendly-snippets",
-  -- lsp
-  "williamboman/mason.nvim",
-  "neovim/nvim-lspconfig",
-  "williamboman/mason-lspconfig.nvim",
-  "windwp/nvim-autopairs",
-  "jose-elias-alvarez/null-ls.nvim",
-  -- editor
-  "tpope/vim-commentary",
-  "tpope/vim-fugitive",
-  -- telescope
-  {
-    "nvim-telescope/telescope.nvim",
-    dependencies = { { "nvim-lua/plenary.nvim" }}
-  },
-  -- treesitter
-  "nvim-treesitter/nvim-treesitter",
-  "windwp/nvim-ts-autotag",
-  -- ui
-  {
-    "nvim-lualine/lualine.nvim",
-    lazy = false,
-    dependencies = { { "nvim-tree/nvim-web-devicons" }}
-  },
-}
+    --   "ActivityWatch/aw-watcher-vim",
+    --   lazy = false,
+    --   priority = 1000
+    -- },
+    -- colorschemes
+    {
+      "nvim-tree/nvim-tree.lua",
+      version = "*",
+      dependencies = {
+        "nvim-tree/nvim-web-devicons",
+      },
+      config = function()
+        require("nvim-tree").setup {}
+      end,
+    },
+    {
+      "ellisonleao/gruvbox.nvim",
+      lazy = false,
+      priority = 1000,
+      config = function()
+        vim.cmd([[ colorscheme gruvbox ]])
+      end
+    },
+    -- {
+      --   "Mofiqul/vscode.nvim",
+      --   lazy = false,
+      --   priority = 1000,
+      --   config = function()
+        --     vim.cmd([[ colorscheme vscode ]])
+        --   end
+        -- },
+        -- completion
+        "hrsh7th/nvim-cmp",
+        "hrsh7th/cmp-nvim-lsp",
+        "L3MON4D3/LuaSnip",
+        "saadparwaiz1/cmp_luasnip",
+        "rafamadriz/friendly-snippets",
+        -- lsp
+        "williamboman/mason.nvim",
+        "neovim/nvim-lspconfig",
+        "williamboman/mason-lspconfig.nvim",
+        "windwp/nvim-autopairs",
+        "jose-elias-alvarez/null-ls.nvim",
+        -- editor
+        "tpope/vim-commentary",
+        "tpope/vim-fugitive",
+        -- telescope
+        {
+          "nvim-telescope/telescope.nvim",
+          dependencies = { { "nvim-lua/plenary.nvim" }}
+        },
+        -- treesitter
+        "nvim-treesitter/nvim-treesitter",
+        "windwp/nvim-ts-autotag",
+        -- ui
+        {
+          "nvim-lualine/lualine.nvim",
+          lazy = false,
+          dependencies = { { "nvim-tree/nvim-web-devicons" }}
+        },
+      }
 
-require("lazy").setup(plugins, opts)
-require("plugins.autopairs")
-require("plugins.cmp")
-require("plugins.lsp-config")
-require("plugins.lualine")
-require("plugins.null-ls")
-require("plugins.telescope")
-require("plugins.treesitter")
+      require("lazy").setup(plugins, opts)
+      require("plugins.autopairs")
+      require("plugins.cmp")
+      require("plugins.lsp-config")
+      require("plugins.lualine")
+      require("plugins.null-ls")
+      require("plugins.telescope")
+      require("plugins.treesitter")
